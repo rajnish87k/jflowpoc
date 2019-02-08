@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-journal-r-heading" jhiTranslate="jflowApp.journalR.home.createOrEditLabel">Create or edit a Journal R</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!journalR.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="journalR.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalR.objectId" for="field_objectId">Object Id</label>
+                    <input type="text" class="form-control" name="objectId" id="field_objectId"
+                        [(ngModel)]="journalR.objectId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalR.nameOfSociety" for="field_nameOfSociety">Name Of Society</label>
+                    <input type="text" class="form-control" name="nameOfSociety" id="field_nameOfSociety"
+                        [(ngModel)]="journalR.nameOfSociety" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalR.onlineServices" for="field_onlineServices">Online Services</label>
+                    <input type="text" class="form-control" name="onlineServices" id="field_onlineServices"
+                        [(ngModel)]="journalR.onlineServices" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalR.required" for="field_required">Required</label>
+                    <select class="form-control" id="field_required" name="required" [(ngModel)]="journalR.required" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="journalSOption.id === journalR.required?.id ? journalR.required : journalSOption" *ngFor="let journalSOption of journals; trackBy: trackJournalSById">{{journalSOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

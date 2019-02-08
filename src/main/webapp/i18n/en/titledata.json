@@ -1,0 +1,27 @@
+
+{
+    "jflowApp": {
+        "titledata" : {
+            "home": {
+                "title": "Titledata",
+                "createLabel": "Create a new Titledata",
+                "createOrEditLabel": "Create or edit a Titledata"
+            },
+            "created": "A new Titledata is created with identifier {{ param }}",
+            "updated": "A Titledata is updated with identifier {{ param }}",
+            "deleted": "A Titledata is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Titledata {{ id }}?"
+            },
+            "detail": {
+                "title": "Titledata"
+            },
+            "objectId": "Object Id",
+            "objectName": "Object Name",
+            "productId": "Product Id",
+            "productTitle": "Product Title",
+            "shortTitle": "Short Title",
+            "creationDate": "Creation Date"
+        }
+    }
+}

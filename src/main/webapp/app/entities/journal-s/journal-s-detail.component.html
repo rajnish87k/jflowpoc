@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="journalS">
+            <h2><span jhiTranslate="jflowApp.journalS.detail.title">Journal S</span> {{journalS.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jflowApp.journalS.objectId">Object Id</span></dt>
+                <dd>
+                    <span>{{journalS.objectId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.objectName">Object Name</span></dt>
+                <dd>
+                    <span>{{journalS.objectName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.productId">Product Id</span></dt>
+                <dd>
+                    <span>{{journalS.productId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.title">Title</span></dt>
+                <dd>
+                    <span>{{journalS.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.shortTitle">Short Title</span></dt>
+                <dd>
+                    <span>{{journalS.shortTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.primaryLanguage">Primary Language</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jflowApp.Language.' + journalS.primaryLanguage}}">{{journalS.primaryLanguage}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.companyGroup">Company Group</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jflowApp.CompanyGroup.' + journalS.companyGroup}}">{{journalS.companyGroup}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.publisher">Publisher</span></dt>
+                <dd>
+                    <span>{{journalS.publisher}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.publishingSegment">Publishing Segment</span></dt>
+                <dd>
+                    <span>{{journalS.publishingSegment}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.imprint">Imprint</span></dt>
+                <dd>
+                    <span>{{journalS.imprint}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.medium">Medium</span></dt>
+                <dd>
+                    <span>{{journalS.medium}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalS.creationDate">Creation Date</span></dt>
+                <dd>
+                    <span>{{journalS.creationDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/journal-s', journalS.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

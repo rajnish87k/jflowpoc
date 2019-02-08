@@ -1,0 +1,64 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jflowApp.journalR.home.title">Journal RS</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-journal-r" [routerLink]="['/journal-r/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jflowApp.journalR.home.createLabel">
+            Create new Journal R
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="journalRS">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jflowApp.journalR.objectId">Object Id</span></th>
+            <th><span jhiTranslate="jflowApp.journalR.nameOfSociety">Name Of Society</span></th>
+            <th><span jhiTranslate="jflowApp.journalR.onlineServices">Online Services</span></th>
+            <th><span jhiTranslate="jflowApp.journalR.required">Required</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let journalR of journalRS ;trackBy: trackId">
+                <td><a [routerLink]="['/journal-r', journalR.id, 'view' ]">{{journalR.id}}</a></td>
+                <td>{{journalR.objectId}}</td>
+                <td>{{journalR.nameOfSociety}}</td>
+                <td>{{journalR.onlineServices}}</td>
+                <td>
+                    <div *ngIf="journalR.required">
+                        <a [routerLink]="['../journal-s', journalR.required?.id, 'view' ]" >{{journalR.required?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/journal-r', journalR.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/journal-r', journalR.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'journal-r/'+ journalR.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

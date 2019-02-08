@@ -1,0 +1,25 @@
+
+{
+    "jflowApp": {
+        "gscontent" : {
+            "home": {
+                "title": "Gscontents",
+                "createLabel": "Create a new Gscontent",
+                "createOrEditLabel": "Create or edit a Gscontent"
+            },
+            "created": "A new Gscontent is created with identifier {{ param }}",
+            "updated": "A Gscontent is updated with identifier {{ param }}",
+            "deleted": "A Gscontent is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Gscontent {{ id }}?"
+            },
+            "detail": {
+                "title": "Gscontent"
+            },
+            "objectId": "Object Id",
+            "repoContentPath": "Repo Content Path",
+            "creationDate": "Creation Date",
+            "parentId": "Parent Id"
+        }
+    }
+}

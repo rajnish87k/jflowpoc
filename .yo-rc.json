@@ -1,0 +1,38 @@
+{
+  "entities": [],
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "clientPackageManager": "yarn",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "com.spr.jflow.poc",
+    "packageFolder": "com/spr/jflow/poc",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "serviceDiscoveryType": false,
+    "skipClient": false,
+    "skipServer": false,
+    "testFrameworks": [],
+    "useSass": false,
+    "websocket": false,
+    "cacheProvider": "no",
+    "buildTool": "gradle",
+    "authenticationType": "jwt",
+    "baseName": "jflow",
+    "jhipsterVersion": "5.0.1",
+    "jwtSecretKey": "d5b4803e3d91ace3e68cff65b46cc0ab3766f4ee",
+    "clientFramework": "angularX",
+    "serverPort": "8080",
+    "skipUserManagement": false
+  }
+}

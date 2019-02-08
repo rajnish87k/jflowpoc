@@ -1,0 +1,25 @@
+
+{
+    "jflowApp": {
+        "journalR" : {
+            "home": {
+                "title": "Journal RS",
+                "createLabel": "Create a new Journal R",
+                "createOrEditLabel": "Create or edit a Journal R"
+            },
+            "created": "A new Journal R is created with identifier {{ param }}",
+            "updated": "A Journal R is updated with identifier {{ param }}",
+            "deleted": "A Journal R is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Journal R {{ id }}?"
+            },
+            "detail": {
+                "title": "Journal R"
+            },
+            "objectId": "Object Id",
+            "nameOfSociety": "Name Of Society",
+            "onlineServices": "Online Services",
+            "required": "Required"
+        }
+    }
+}

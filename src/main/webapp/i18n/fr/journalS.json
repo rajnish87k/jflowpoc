@@ -1,0 +1,34 @@
+
+{
+    "jflowApp": {
+        "journalS" : {
+            "home": {
+                "title": "JournalS",
+                "createLabel": "Créer un nouveau Journal S",
+                "createOrEditLabel": "Créer ou éditer un Journal S"
+            },
+            "created": "Un nouveau Journal S a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Journal S avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Journal S avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Journal S {{ id }} ?"
+            },
+            "detail": {
+                "title": "Journal S"
+            },
+            "objectId": "Object Id",
+            "objectName": "Object Name",
+            "productId": "Product Id",
+            "title": "Title",
+            "shortTitle": "Short Title",
+            "primaryLanguage": "Primary Language",
+            "companyGroup": "Company Group",
+            "publisher": "Publisher",
+            "publishingSegment": "Publishing Segment",
+            "imprint": "Imprint",
+            "medium": "Medium",
+            "creationDate": "Creation Date",
+            "journalR": "Journal R"
+        }
+    }
+}

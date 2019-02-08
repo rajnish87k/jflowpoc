@@ -1,0 +1,16 @@
+application {
+  config {
+    baseName jflow
+    applicationType monolith
+    packageName com.spr.jflow.poc
+    databaseType sql
+    prodDatabaseType postgresql
+    devDatabaseType postgresql
+    authenticationType jwt
+    buildTool gradle
+    cacheProvider no
+    enableHibernateCache false
+    
+    
+  }
+}

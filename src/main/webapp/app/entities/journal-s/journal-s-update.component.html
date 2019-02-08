@@ -1,0 +1,123 @@
+<div class="force-to-the-bottom">
+    <tag-input [ngModel]="['hardocoded-item']">
+      <tag-input-dropdown
+        [autocompleteItems]="items"
+        [showDropdownIfEmpty]="true"
+        [dynamicUpdate]="false"
+      >
+      </tag-input-dropdown>
+    </tag-input>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-journal-s-heading" jhiTranslate="jflowApp.journalS.home.createOrEditLabel">Create or edit a Journal S</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!journalS.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="journalS.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.objectId" for="field_objectId">Object Id</label>
+                    <input type="text" class="form-control" name="objectId" id="field_objectId"
+                        [(ngModel)]="journalS.objectId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.objectName" for="field_objectName">Object Name</label>
+                    <input type="text" class="form-control" name="objectName" id="field_objectName"
+                        [(ngModel)]="journalS.objectName" required/>
+                    <div [hidden]="!(editForm.controls.objectName?.dirty && editForm.controls.objectName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.objectName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.productId" for="field_productId">Product Id</label>
+                    <input type="text" class="form-control" name="productId" id="field_productId"
+                        [(ngModel)]="journalS.productId" required/>
+                    <div [hidden]="!(editForm.controls.productId?.dirty && editForm.controls.productId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.productId?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                        [(ngModel)]="journalS.title" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.shortTitle" for="field_shortTitle">Short Title</label>
+                    <input type="text" class="form-control" name="shortTitle" id="field_shortTitle"
+                        [(ngModel)]="journalS.shortTitle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.primaryLanguage" for="field_primaryLanguage">Primary Language</label>
+                    <select class="form-control" name="primaryLanguage" [(ngModel)]="journalS.primaryLanguage" id="field_primaryLanguage" >
+                        <option value="ENGLISH">{{'jflowApp.Language.ENGLISH' | translate}}</option>
+                        <option value="GERMAN">{{'jflowApp.Language.GERMAN' | translate}}</option>
+                        <option value="DUTCH">{{'jflowApp.Language.DUTCH' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.companyGroup" for="field_companyGroup">Company Group</label>
+                    <select class="form-control" name="companyGroup" [(ngModel)]="journalS.companyGroup" id="field_companyGroup" >
+                        <option value="AA">{{'jflowApp.CompanyGroup.AA' | translate}}</option>
+                        <option value="BB">{{'jflowApp.CompanyGroup.BB' | translate}}</option>
+                        <option value="CC">{{'jflowApp.CompanyGroup.CC' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.publisher" for="field_publisher">Publisher</label>
+                    <input type="text" class="form-control" name="publisher" id="field_publisher"
+                        [(ngModel)]="journalS.publisher" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.publishingSegment" for="field_publishingSegment">Publishing Segment</label>
+                    <input type="text" class="form-control" name="publishingSegment" id="field_publishingSegment"
+                        [(ngModel)]="journalS.publishingSegment" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.imprint" for="field_imprint">Imprint</label>
+                    <input type="text" class="form-control" name="imprint" id="field_imprint"
+                        [(ngModel)]="journalS.imprint" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.medium" for="field_medium">Medium</label>
+                    <input type="text" class="form-control" name="medium" id="field_medium"
+                        [(ngModel)]="journalS.medium" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.journalS.creationDate" for="field_creationDate">Creation Date</label>
+                    <div class="input-group">
+                        <input id="field_creationDate" type="text" class="form-control" name="creationDate" ngbDatepicker  #creationDateDp="ngbDatepicker" [(ngModel)]="journalS.creationDate"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="creationDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.creationDate?.dirty && editForm.controls.creationDate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.creationDate?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

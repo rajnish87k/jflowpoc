@@ -1,0 +1,81 @@
+{
+    "name": "JournalS",
+    "fields": [
+        {
+            "fieldName": "objectId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objectName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "productId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shortTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "primaryLanguage",
+            "fieldType": "Language",
+            "fieldValues": "ENGLISH,GERMAN,DUTCH"
+        },
+        {
+            "fieldName": "companyGroup",
+            "fieldType": "CompanyGroup",
+            "fieldValues": "AA,BB,CC"
+        },
+        {
+            "fieldName": "publisher",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "publishingSegment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imprint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "medium",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "journalR",
+            "otherEntityName": "journalR",
+            "otherEntityRelationshipName": "required"
+        }
+    ],
+    "changelogDate": "20190208082536",
+    "entityTableName": "journal_s",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

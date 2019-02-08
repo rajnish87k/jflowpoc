@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="journalR">
+            <h2><span jhiTranslate="jflowApp.journalR.detail.title">Journal R</span> {{journalR.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jflowApp.journalR.objectId">Object Id</span></dt>
+                <dd>
+                    <span>{{journalR.objectId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalR.nameOfSociety">Name Of Society</span></dt>
+                <dd>
+                    <span>{{journalR.nameOfSociety}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalR.onlineServices">Online Services</span></dt>
+                <dd>
+                    <span>{{journalR.onlineServices}}</span>
+                </dd>
+                <dt><span jhiTranslate="jflowApp.journalR.required">Required</span></dt>
+                <dd>
+                    <div *ngIf="journalR.required">
+                        <a [routerLink]="['/journal-s', journalR.required?.id, 'view']">{{journalR.required?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/journal-r', journalR.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

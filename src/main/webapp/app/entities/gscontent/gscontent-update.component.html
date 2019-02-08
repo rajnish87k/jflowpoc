@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-gscontent-heading" jhiTranslate="jflowApp.gscontent.home.createOrEditLabel">Create or edit a Gscontent</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!gscontent.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="gscontent.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.gscontent.objectId" for="field_objectId">Object Id</label>
+                    <input type="text" class="form-control" name="objectId" id="field_objectId"
+                        [(ngModel)]="gscontent.objectId" required/>
+                    <div [hidden]="!(editForm.controls.objectId?.dirty && editForm.controls.objectId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.objectId?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.gscontent.repoContentPath" for="field_repoContentPath">Repo Content Path</label>
+                    <input type="text" class="form-control" name="repoContentPath" id="field_repoContentPath"
+                        [(ngModel)]="gscontent.repoContentPath" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.gscontent.creationDate" for="field_creationDate">Creation Date</label>
+                    <div class="input-group">
+                        <input id="field_creationDate" type="text" class="form-control" name="creationDate" ngbDatepicker  #creationDateDp="ngbDatepicker" [(ngModel)]="gscontent.creationDate"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="creationDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.creationDate?.dirty && editForm.controls.creationDate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.creationDate?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jflowApp.gscontent.parentId" for="field_parentId">Parent Id</label>
+                    <input type="text" class="form-control" name="parentId" id="field_parentId"
+                        [(ngModel)]="gscontent.parentId" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
